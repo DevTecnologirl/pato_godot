@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxyqj4q7qw5tw"]
+
+[ext_resource type="Script" path="res://scripts/Area_Espinhos.gd" id="1_lw8j8"]
+[ext_resource type="Texture2D" uid="uid://daam2cm67p17t" path="res://Art Assets/Art Assets/Hazards/Spikes.png" id="2_vd0tg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kgj1p"]
+size = Vector2(63, 8)
+
+[node name="Area_Espinhos" type="Area2D"]
+script = ExtResource("1_lw8j8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(10.5, -1)
+shape = SubResource("RectangleShape2D_kgj1p")
+
+[node name="Spikes" type="Sprite2D" parent="."]
+position = Vector2(2, -5)
+texture = ExtResource("2_vd0tg")
+
+[node name="Spikes2" type="Sprite2D" parent="."]
+position = Vector2(18, -5)
+texture = ExtResource("2_vd0tg")
+
+[node name="Spikes3" type="Sprite2D" parent="."]
+position = Vector2(34, -5)
+texture = ExtResource("2_vd0tg")
+
+[node name="Spikes4" type="Sprite2D" parent="."]
+position = Vector2(-13, -5)
+texture = ExtResource("2_vd0tg")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
